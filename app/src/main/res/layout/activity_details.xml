@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="rafaxplayer.comprasonline.DetailsActivity">
+    <android.support.design.widget.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/app_bar_height"
+        android:fitsSystemWindows="true"
+        android:theme="@style/AppTheme.AppBarOverlay">
+
+        <android.support.design.widget.CollapsingToolbarLayout
+            android:id="@+id/toolbar_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fitsSystemWindows="true"
+            android:background="@color/cardview_dark_background"
+            app:titleEnabled="false"
+            app:contentScrim="?attr/colorPrimary"
+            app:expandedTitleTextAppearance="@style/AppTheme.expandedTitleAppareance"
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
+
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fitsSystemWindows="true"
+                android:transitionName="explode"
+                android:id="@+id/imagePlace"
+                android:src="@drawable/placeholder_image" />
+
+            <include layout="@layout/toolbar"/>
+
+        </android.support.design.widget.CollapsingToolbarLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <android.support.v4.widget.NestedScrollView
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        android:layout_below="@+id/app_bar"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@color/colorPrimary"
+                android:padding="@dimen/detailstext_left">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="Establisment"
+                    android:id="@+id/textViewName"
+                    android:ellipsize="end"
+                    android:textColor="@android:color/white"
+                    android:paddingLeft="8dp"
+                    android:transitionName="explode1"
+                    android:paddingTop="6dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="6dp"
+                     />
+
+                <LinearLayout
+                    android:orientation="horizontal"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:padding="@dimen/detailstext_left">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceMedium"
+                        android:text="rating"
+                        android:id="@+id/textViewRating"
+                        android:textColor="@android:color/white"
+                        android:layout_gravity="center_vertical" />
+
+                    <RatingBar
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/ratingBar"
+                        style="?android:attr/ratingBarStyleSmall"
+                        android:layout_marginLeft="6dp"
+                        android:layout_gravity="center_vertical" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="Address"
+                android:id="@+id/textViewAddress"
+                android:drawableLeft="@drawable/map_marker"
+                android:drawablePadding="@dimen/padding_drawableicon"
+
+                android:layout_marginLeft="@dimen/detailstext_left"
+                android:layout_marginTop="@dimen/padding_drawableicon" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="website"
+                android:drawableLeft="@drawable/earth"
+                android:drawablePadding="@dimen/padding_drawableicon"
+                android:id="@+id/textViewWebsite"
+                android:layout_marginLeft="@dimen/detailstext_left"
+                android:layout_marginTop="@dimen/padding_drawableicon" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text=" phone"
+                android:drawablePadding="@dimen/padding_drawableicon"
+                android:drawableLeft="@drawable/phone"
+                android:id="@+id/textViewPhone"
+                android:layout_marginTop="@dimen/padding_drawableicon"
+                android:layout_marginLeft="@dimen/detailstext_left" />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="N/A"
+                android:drawableLeft="@drawable/clock"
+                android:drawablePadding="@dimen/padding_drawableicon"
+                android:id="@+id/textViewIsOpen"
+                android:layout_marginLeft="@dimen/detailstext_left"
+                android:layout_marginTop="@dimen/padding_drawableicon" />
+        </LinearLayout>
+
+
+    </android.support.v4.widget.NestedScrollView>
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/fab_margin"
+        android:src="@drawable/phone_dark"
+        app:layout_anchor="@id/app_bar"
+        app:layout_anchorGravity="bottom|end" />
+
+</android.support.design.widget.CoordinatorLayout>
